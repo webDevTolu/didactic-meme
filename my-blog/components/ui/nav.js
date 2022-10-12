@@ -10,7 +10,7 @@ const Nav = () => {
         </a>
       </Link>
 
-      <nav>
+      <nav className="bg-inherit">
         <ul className="flex gap-x-6">
           <li>
             <Link href="/posts">Posts</Link>
