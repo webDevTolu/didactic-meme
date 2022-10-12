@@ -12,7 +12,7 @@ const Hero = () => {
           className="w-full h-full object-cover object-top"
         />
       </div>
-      <div className="flex flex-col gap-4 items-center">
+      <div className="text-center flex flex-col gap-4 items-center">
         <h1 className="text-4xl font-bold">Hi, I'm WebDevTolu</h1>
         <p className="text-lg font-medium">
           A full stack developer building experiences to make your life easier.
