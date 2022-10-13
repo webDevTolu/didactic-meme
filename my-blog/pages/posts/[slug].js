@@ -1,5 +1,7 @@
+import PostContent from "../../components/posts/post-detail/post-content";
+
 const SinglePost = () => {
-  return <div>SinglePost</div>;
+  return <PostContent />;
 };
 
 export default SinglePost;
