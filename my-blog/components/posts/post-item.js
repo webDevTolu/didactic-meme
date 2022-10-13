@@ -8,35 +8,45 @@ const PostItem = ({ title, image, excerpt, date, slug, author }) => {
   const linkPath = `/posts/${slug}`;
 
   return (
-    // <Link href={linkPath}>
-    //   <a className="block">
-    <li className="w-full h-96 rounded-md overflow-hidden shadow-md border flex flex-col">
-      <div className="w-full h-1/3 border">
-        <Image
-          src={imagePath}
-          alt={title}
-          width={300}
-          height={200}
-          className="object-cover object-center"
-        />
-      </div>
-      <div className="border">
-        <h3>{title}</h3>
-        <p>{excerpt}</p>
+    <Link href={linkPath}>
+      <a className="block">
+        <div className="rounded-lg shadow-md overflow-hidden h-96 border">
+          <Image
+            src={imagePath}
+            alt={title}
+            width={800}
+            height={300}
+            layout="responsive"
+            className="w-full h-2/5 object-cover object-top"
+          />
+          <div className="p-1">
+            <h3 className="text-xl font-bold text-slate-900">{title}</h3>
+            <p className="text-base text-slate-600">{excerpt}</p>
 
-        <div>
-          <div>
-            <Image src={authorImagePath} alt={title} width={100} height={100} />
-          </div>
-          <div>
-            <h5>{author.name}</h5>
-            <p>{moment(date).format("MMM Do YY")} . 5min read</p>
+            <div className="flex h-max gap-x-2 items-center">
+              <div className="w-12 h-12 rounded-full overflow-hidden">
+                <Image
+                  src={authorImagePath}
+                  alt={title}
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-contain object-center"
+                />
+              </div>
+
+              <div className="mt-6 h-max">
+                <h5 className="text-base font-semibold text-slate-700">
+                  {author.name}
+                </h5>
+                <p className="text-sm text-slate-500">
+                  {moment(date).format("MMM Do YY")} . 5min read
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </li>
-    //   </a>
-    // </Link>
+      </a>
+    </Link>
   );
 };
 

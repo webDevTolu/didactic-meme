@@ -5,7 +5,7 @@ const Hero = () => {
     <section className="w-full h-screen flex flex-col md:flex-row bg-stone-50 text-stone-900 items-center justify-center gap-8">
       <div className="w-64 h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl">
         <Image
-          src="/images/site/me.png"
+          src="/images/site/my baby.jpg"
           alt="a rare picture of WebDevTolu"
           width={300}
           height={400}
