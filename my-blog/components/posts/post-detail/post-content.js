@@ -1,17 +1,16 @@
-import { DUMMY_POST } from "../../../data/post";
 import PostHeader from "./post-header";
 import ReactMarkdown from "react-markdown";
 
-const PostContent = () => {
-  DUMMY_POST.content = "**This is a first post**";
+const PostContent = ({ post }) => {
+  post.content = "**This is a first post**";
 
   return (
     <article>
       <PostHeader
-        title={DUMMY_POST.title}
-        image={`/images/posts/${DUMMY_POST.slug}/${DUMMY_POST.image}`}
+        title={post.title}
+        image={`/images/posts/${post.slug}/${post.image}`}
       />
-      <ReactMarkdown>{DUMMY_POST.content}</ReactMarkdown>
+      <ReactMarkdown>{post.content}</ReactMarkdown>
     </article>
   );
 };
