@@ -20,10 +20,24 @@ const getPostData = (fileName) => {
   return postData;
 };
 
-const getAllPosts = () => {
+export const getAllPosts = () => {
   const postFiles = fs.readdirSync(fileDir);
 
-  for (const postFile of postFiles) {
-    const postData = getPostData(postFile);
-  }
+  const allPosts = postFiles.map((postFile) => {
+    return getPostData(postFile);
+  });
+
+  const sortedPosts = allPosts.sort((postA, postB) =>
+    postA.date > postB.date ? -1 : 1
+  );
+
+  return sortedPosts;
+};
+
+export const getFeaturedPosts = () => {
+  const allPosts = getAllPosts();
+
+  const featuredPosts = allPosts.filter((post) => post.isFeatured);
+
+  return featuredPosts;
 };
